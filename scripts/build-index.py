@@ -7,6 +7,7 @@ Run this script and commit the result whenever issues.json changes.
 
 from __future__ import annotations
 
+import datetime
 import html
 import json
 import sys
@@ -106,14 +107,9 @@ def fail(message: str) -> None:
     raise SystemExit(1)
 
 
-def issue_slug(number: int) -> str:
-    return f"issue-{number:02d}"
-
-
 def render_issue(issue: dict, lead: bool) -> str:
-    number = issue["number"]
-    slug = issue_slug(number)
-    href = f"issues/{slug}.html"
+    date = datetime.date.fromisoformat(issue["date"])
+    href = f"issues/{issue['date']}.html"
     title = html.escape(issue["title"])
     coverage = html.escape(issue["coverage"])
     klass = "story lead" if lead else "story"
@@ -125,7 +121,7 @@ def render_issue(issue: dict, lead: bool) -> str:
         dek = f'\n<p class="dek">{html.escape(issue["dek"])}</p>'
     return (
         f'<article class="{klass}">\n'
-        f'<p class="kicker">Issue #{number}</p>\n'
+        f'<p class="kicker">{date:%b} {date.day}, {date.year}</p>\n'
         f'<h3><a href="{href}">{title}</a></h3>\n'
         f'<p class="meta">{meta}</p>'
         f"{dek}\n"
@@ -137,17 +133,21 @@ def load_issues(data: dict) -> list[dict]:
     raw = data.get("issues")
     if not isinstance(raw, list):
         fail("issues.json needs an 'issues' array")
-    seen: set[int] = set()
+    seen: set[str] = set()
     issues: list[dict] = []
     for i, issue in enumerate(raw):
         if not isinstance(issue, dict):
             fail(f"issues[{i}] must be an object")
-        number = issue.get("number")
-        if isinstance(number, bool) or not isinstance(number, int) or number < 1:
-            fail(f"issues[{i}].number must be a positive integer")
-        if number in seen:
-            fail(f"duplicate issue number {number}")
-        seen.add(number)
+        date = issue.get("date")
+        try:
+            valid = isinstance(date, str) and datetime.date.fromisoformat(date).isoformat() == date
+        except ValueError:
+            valid = False
+        if not valid:
+            fail(f"issues[{i}].date must be a YYYY-MM-DD date string")
+        if date in seen:
+            fail(f"duplicate issue date {date}")
+        seen.add(date)
         title = issue.get("title")
         coverage = issue.get("coverage")
         if not isinstance(title, str) or not title.strip():
@@ -160,15 +160,14 @@ def load_issues(data: dict) -> list[dict]:
         bookmarks = issue.get("bookmarks")
         if bookmarks is not None and (isinstance(bookmarks, bool) or not isinstance(bookmarks, int) or bookmarks < 0):
             fail(f"issues[{i}].bookmarks must be a non-negative integer")
-        slug = issue_slug(number)
-        html_path = ROOT / "issues" / f"{slug}.html"
-        md_path = ROOT / "issues" / f"{slug}.md"
+        html_path = ROOT / "issues" / f"{date}.html"
+        md_path = ROOT / "issues" / f"{date}.md"
         if not html_path.is_file():
-            fail(f"missing {html_path.relative_to(ROOT)} for issue {number}")
+            fail(f"missing {html_path.relative_to(ROOT)} for issue {date}")
         if not md_path.is_file():
-            fail(f"missing {md_path.relative_to(ROOT)} for issue {number}")
+            fail(f"missing {md_path.relative_to(ROOT)} for issue {date}")
         issues.append(issue)
-    issues.sort(key=lambda item: item["number"], reverse=True)
+    issues.sort(key=lambda item: item["date"], reverse=True)
     return issues
 
 
