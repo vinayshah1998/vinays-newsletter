@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Twenty-seven bookmarks: the pull request, the long-lived branch and the coding interview all get pink slips, agents get a Git forge and a Rust runtime on Lambda, and your smart TV gets a firewall.">
+<title>Bookmark Digest, Oct 31, 2026: No PRs, No Branches, No Coding Interview</title>
+<style>
+:root{--paper:#FFF1E5;--card:#F2DFCE;--rule:#CCC1B7;--ink:#33302E;--muted:#66605C;--claret:#990F3D;--oxford:#0F5499;--teal:#0D7680;
+--serif:Georgia,'Times New Roman',Times,serif;--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:18px/1.6 var(--serif);text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--ink);color:#fff;padding:8px 12px;font:600 14px var(--sans);z-index:10}
+.skip:focus{left:8px}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:3px solid var(--oxford);outline-offset:2px;border-radius:2px}
+.topbar{border-bottom:1px solid var(--rule)}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:48px;font:600 13px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase}
+.brand{font:700 20px/1 var(--serif);letter-spacing:0;text-transform:none}
+.edition{color:var(--muted)}
+.masthead{border-bottom:1px solid var(--rule);padding:48px 0 36px}
+.eyebrow{margin:0 0 14px;font:600 14px/1 var(--sans);color:var(--claret);letter-spacing:.02em}
+h1{margin:0 0 18px;font:400 clamp(36px,6vw,64px)/1.05 var(--serif);letter-spacing:-.015em;max-width:18ch}
+.standfirst{margin:0 0 20px;font:400 clamp(19px,2.2vw,23px)/1.45 var(--serif);color:var(--ink);max-width:62ch}
+.dateline{margin:0;font:14px/1.4 var(--sans);color:var(--muted);padding-top:14px;border-top:1px solid var(--rule);display:inline-block}
+.dateline em{font-style:normal}
+main{padding:12px 32px 64px}
+.section{margin-top:44px}
+.section-label{margin:0 0 24px;padding-top:12px;border-top:4px solid var(--ink);font:700 15px/1.2 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.grid{display:grid;grid-template-columns:1fr;gap:0 48px}
+.story{padding:0 0 28px;margin:0 0 28px;border-bottom:1px solid var(--rule);max-width:70ch}
+.story h3{margin:0 0 8px;font:400 24px/1.25 var(--serif);letter-spacing:-.005em}
+.story h3 a{background-image:linear-gradient(currentColor,currentColor);background-size:0 1px;background-repeat:no-repeat;background-position:0 100%;transition:color .15s,background-size .2s}
+.story h3 a:hover,.story h3 a:focus-visible{color:var(--claret);background-size:100% 1px}
+.meta{margin:0 0 12px;font:14px/1.4 var(--sans);color:var(--muted);display:flex;flex-wrap:wrap;gap:6px}
+.who{font-weight:600;color:var(--ink)}
+.story p{margin:0 0 14px}
+.story p a,.pick p a{color:var(--oxford);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.story p a:hover,.pick p a:hover{color:var(--claret)}
+.why{margin:16px 0 0!important;padding:10px 0 10px 16px;border-left:3px solid var(--teal);font:16px/1.55 var(--sans);background:linear-gradient(90deg,rgba(13,118,128,.07),rgba(13,118,128,0) 85%)}
+.why strong{color:var(--teal);font-weight:700}
+code{font:.84em var(--mono);background:var(--card);padding:1px 5px;border-radius:2px}
+.lead{max-width:none;display:grid;grid-template-columns:1fr;gap:0 48px;padding-bottom:36px;margin-bottom:36px}
+.lead h3{font-size:clamp(28px,3.6vw,40px);line-height:1.12;letter-spacing:-.01em}
+.lead > p:not(.meta):not(.why){font-size:19px;max-width:66ch}
+.pick{margin:56px 0 0;background:var(--card);border-top:4px solid var(--claret);padding:28px 32px 30px}
+.pick .section-label{border-top:0;padding-top:0;color:var(--claret);margin-bottom:14px}
+.pick p{margin:0;font:400 clamp(19px,2vw,22px)/1.5 var(--serif);max-width:68ch}
+.pick p strong a{font-weight:700}
+.foot{border-top:1px solid var(--rule);padding:24px 0 40px;font:14px/1.5 var(--sans);color:var(--muted)}
+.foot em{font-style:normal}
+@media (min-width:900px){
+ .grid{grid-template-columns:1fr 1fr}
+ .grid .story{max-width:none}
+ .lead{grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-template-areas:"h h" "m m" "b w"}
+ .lead h3{grid-area:h;max-width:28ch}.lead .meta{grid-area:m}.lead > p:nth-of-type(2){grid-area:b}.lead .why{grid-area:w;align-self:start;margin-top:0!important}
+}
+@media (max-width:600px){
+ body{font-size:17px}
+ .wrap,main{padding-left:18px;padding-right:18px}
+ .masthead{padding:32px 0 28px}
+ .story h3{font-size:21px}
+ .pick{padding:22px 20px;margin-left:-18px;margin-right:-18px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+</style></head><body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="topbar"><div class="wrap"><span class="brand">Bookmark Digest</span><span class="edition">Oct 31, 2026</span></div></div>
+<header class="masthead"><div class="wrap">
+<p class="eyebrow">Bookmark Digest · Oct 31, 2026</p>
+<h1>No PRs, No Branches, No Coding Interview</h1>
+<p class="standfirst">Twenty-seven bookmarks this week, and a running theme: things engineers treated as load-bearing (the pull request, the long-lived branch, the coding interview) are getting quietly unbolted now that agents do the chores.<br>Also inside: the design doc behind AWS's Infinity runtime, a skill put on a diet, a Samsung TV that borrows your soundbar's microphone, and the smoothest mirrors in the known universe.</p>
+<p class="dateline"><em>Oct 25–30, 2026 (PT) · 27 bookmarks, every one of them</em></p>
+</div></header>
+<main id="main" class="wrap">
+<section class="section" aria-labelledby="how-to-work-with-agents-now"><h2 class="section-label" id="how-to-work-with-agents-now">How to work with agents now</h2>
+<article class="story lead"><h3><a href="https://x.com/thorstenball/status/2114386050638336082">How I work with Agents (as of October 2026)</a></h3>
+<p class="meta"><span class="who">Thorsten Ball (@thorstenball)</span><span class="sep" aria-hidden="true">·</span><span class="type">X Article (field notes)</span></p>
+<p>Thorsten Ball (Amp) wrote down the advice he had been sending friends in DMs. Use the latest models: "If a model is wrong 10% of the time, you don't know which 10%." Prompt the <em>what</em>, not the <em>how</em>. Make the whole SDLC legible to the agent: production logs, deploys, rollouts, feature flags, bug reports. Eval your AGENTS.md files and skills with "five blind agents, control vs. treatment." Ask for "irrefutable proof" (walkthroughs, demo videos, before/after numbers) and put "this is not evidence" in AGENTS.md. Let agents wait on you, not the reverse. Scheduled wake-ups ("Check the logs in 2hrs") are a "killer feature." Stop hand-managing context, and review only high-blast-radius code: fewer than five central files, plus database migrations.</p>
+<p class="why"><strong>Why it matters:</strong> This reads like a product roadmap for your coding agent dressed up as advice: SDLC tools, heartbeats, threads as company memory, evals for agent knowledge. And "control vs. treatment" for AGENTS.md is a WebLab experiment with a different name.</p>
+</article>
+<div class="grid"><article class="story"><h3><a href="https://x.com/thorstenball/status/2115852581364801911">Why are you still using branches?</a></h3>
+<p class="meta"><span class="who">Thorsten Ball (@thorstenball)</span><span class="sep" aria-hidden="true">·</span><span class="type">long post (opinion)</span></p>
+<p>Thorsten follows his anti-PR post with a case for trunk-based development: small commits straight to main, no long-lived branches. He says someone told him they ran it in a 400-engineer org, and that the Ruby project works this way. The old objection was the "meta programming" it took: splitting a migration, adding a feature flag, keeping two configurations alive for a day. His point is that agents are now good at exactly those chores, so "it's now 10x easier to just work on main." He admits trunk-based development is partly "a ruse" to get you to rethink how you build software.</p>
+<p class="why"><strong>Why it matters:</strong> For your product pitch, "split this into five flag-guarded commits and watch each one roll out" is a stronger story than "types faster." It's also the kind of discipline a big Amazon codebase already has, so you can test the claim at work.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/AmpCode/status/2115428375766482969">Ship the logging first, then change the feature</a></h3>
+<p class="meta"><span class="who">Amp (@AmpCode)</span><span class="sep" aria-hidden="true">·</span><span class="type">video clip</span></p>
+<p>Amp shares a clip of Quinn Slack (@sqs): before he changes a feature, he has the agent add logging, ships only that, and lets it run for an hour or a day. "If I had to wait for another person to go and review that PR, that would slow me down." It quotes Amp's earlier post on how the team works: 21 people, one meeting a week, no pull requests, no mandatory code review, and "a hundred releases a day."</p>
+<p class="why"><strong>Why it matters:</strong> Observe-before-you-change costs almost nothing when an agent writes the logging. You could start doing it Monday whether or not you ever give up code review.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/poteto/status/2114626630429913383">Yaron Minsky on making your codebase better for agents</a></h3>
+<p class="meta"><span class="who">lauren (@poteto)</span><span class="sep" aria-hidden="true">·</span><span class="type">conference talk (YouTube) + summary thread</span></p>
+<p>lauren (@poteto) summarizes a <a href="https://www.youtube.com/watch?v=rUYP4C29yCw">talk by Yaron Minsky</a> of Jane Street. "Agents thrive on feedback," and types are the fastest kind. "Make illegal states unrepresentable" is his catchphrase. Jane Street uses property tests, fuzzing, full-system deterministic simulation, and above all <em>expect tests</em>: you print output, capture it in the test, and review the diff when behavior changes. In the talk he says agents "super want to win the video game" but are bad at keeping a codebase simple, so review matters more, not less. On formal methods: seL4 is about 8,700 lines of C, took about 25 person-years, and needed 23 lines of proof per line of code. He says agents may change that math, and that Jane Street wants to start a formal methods team.</p>
+<p class="why"><strong>Why it matters:</strong> Every point here is a way to give an agent a tighter feedback loop, which is your whole product. He also mentions Verus, a prover that works well with Rust because ownership removes most sharing.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/emilkowalski/status/2115531147853607214">Things to use AI for when working on UI</a></h3>
+<p class="meta"><span class="who">Emil Kowalski (@emilkowalski)</span><span class="sep" aria-hidden="true">·</span><span class="type">tips list</span></p>
+<p>Emil Kowalski's list: have it try to break what you built, generate state machines for different scenarios (success, error, user roles), take before/after screenshots, ask you lots of questions to test the idea, make a few variants of a UI piece to compare, and set up loops that keep checking quality.</p>
+<p class="why"><strong>Why it matters:</strong> "Before/after screenshots" is the UI version of Thorsten's "ask for proof." Both are cheap defaults to bake into your agent.</p>
+</article></div></section>
+<section class="section" aria-labelledby="harnesses-runtimes-and-the-agent-forge"><h2 class="section-label" id="harnesses-runtimes-and-the-agent-forge">Harnesses, runtimes, and the agent forge</h2>
+<div class="grid"><article class="story"><h3><a href="https://x.com/Shaan_GS/status/2114786631274447288">Infinity: the design doc behind 75,000 agents in 8 GB</a></h3>
+<p class="meta"><span class="who">Shaan (@Shaan_GS)</span><span class="sep" aria-hidden="true">·</span><span class="type">AWS Open Source blog post</span></p>
+<p>Shaan's reply links the <a href="https://aws.amazon.com/blogs/opensource/introducing-infinity-a-runtime-for-extreme-agent-concurrency/">AWS Open Source blog post</a> by Shadaj Laddad (Oct 23). It treats an agent like a stackless coroutine. Each slice loads the history, runs one completion, saves it, and dispatches at most one tool call. Tools return right away and post their results to the agent's input queue later. Idle agents cost about 100 KB each. The reference deployment uses SQS FIFO (one <code>MessageGroupId</code> per thread), one Lambda per delivery, Aurora DSQL for histories, DynamoDB for dedup, and EventBridge Scheduler for <code>sleep</code>. Events that arrive mid-wait show up as <em>synthetic tool calls</em> named <code>receive_event__injected</code>. It's Apache 2.0, part of the Hydro project with UC Berkeley, and labeled an early research release.</p>
+<p class="why"><strong>Why it matters:</strong> Last issue had the launch post. This is the full write-up, on AWS services you know well. The synthetic tool call is the idea to borrow: it lets you tell a model "CI just finished" without pretending the user said it.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/badlogicgames/status/2116082498115657878">Durable code mode in Pi, crash-tested</a></h3>
+<p class="meta"><span class="who">Mario Zechner (@badlogicgames)</span><span class="sep" aria-hidden="true">·</span><span class="type">quote-post of an X Article (also a blog post)</span></p>
+<p>Mario Zechner (@badlogicgames) recommends Manoj's write-up, also posted on <a href="https://stacktoheap.com/blog/2026/10/26/durable-code-mode-in-pi/">StackToHeap</a>. In code mode, the model writes one script that calls the tools, and only the script's output goes back to the model. In his small test, the median tool output that reached the model in Pi fell from 26,820 bytes to 4,374, and Pi's logged cost fell from $0.037 to $0.021. Pi Durable resumes a crashed script without re-running finished calls (0 of 18 re-issued). But in the "changed data" trial the result was "Wrong, no error."</p>
+<p class="why"><strong>Why it matters:</strong> That last row is the honest part. Durable replay can quietly return a wrong answer when the data changed underneath it, so you need a plan for that before you sell "crash-proof."</p>
+</article>
+<article class="story"><h3><a href="https://x.com/ashtom/status/2114763996691562540">Entire: a Git forge for agent-human collaboration</a></h3>
+<p class="meta"><span class="who">Thomas Dohmke (@ashtom)</span><span class="sep" aria-hidden="true">·</span><span class="type">product launch thread</span></p>
+<p>Thomas Dohmke's company ships <a href="https://entire.com/">Entire</a>. The thread covers four pieces. Git hosting replicates across regions or mirrors from GitHub. "Continuous Memory" says session logs are "the second most important artifact in software development" and belong in the repo, and it claims up to 71% fewer tokens. Trails replaces the PR with a loop where evals feed the next round of agent work, with CI from Buildkite and Depot. It works with Claude Code, Codex, Cursor, Pi, Copilot, and AWS Kiro. The site's own benchmark puts Entire at 418 pushes per second and GitHub at 4.7. Those are vendor numbers.</p>
+<p class="why"><strong>Why it matters:</strong> Agent session logs stored in the repo next to the code is a position your product will have to take, for or against. Note that Trails pairs with the anti-PR posts above.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/karimatiyeh/status/2115096837736612130">Ramp opens early access to Inspect</a></h3>
+<p class="meta"><span class="who">Karim Atiyeh (@karimatiyeh)</span><span class="sep" aria-hidden="true">·</span><span class="type">X Article (launch)</span></p>
+<p>Karim Atiyeh says Ramp built Inspect, a collaborative cloud coding agent you can call from Slack, GitHub, Linear, or the web. Sessions are "multiplayer by default," and it returns a "visually validated" PR. His numbers: in the past month 99% of Ramp's engineering, design, and product teams used it, and it accounts for 74% of merged PRs. Builders ship 3.4x as many PRs per person as a year ago. It plugs into Ramp Router so you can choose the model.</p>
+<p class="why"><strong>Why it matters:</strong> This is a competitor with real in-house adoption numbers. They lead with multiplayer sessions and visual proof, not model quality.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/EnoReyes/status/2115961998471237907">"Don't worry about that harness babe"</a></h3>
+<p class="meta"><span class="who">Eno Reyes (@EnoReyes)</span><span class="sep" aria-hidden="true">·</span><span class="type">meme quote-post</span></p>
+<p>Eno Reyes of Factory quotes Factory's launch of Droid 1.0, "the new engine behind Factory's agent," billed as more accurate, more efficient, and faster. His caption: "don't worry about that harness babe they don't even have their own model." The launch post itself has no benchmark numbers.</p>
+<p class="why"><strong>Why it matters:</strong> The joke is the thesis for model-less harness companies, and that includes yours: the harness can be the product.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/nicopreme/status/2114975730471997613">skill-diet: put your agent skills on a diet</a></h3>
+<p class="meta"><span class="who">Nico Bailon (@nicopreme)</span><span class="sep" aria-hidden="true">·</span><span class="type">open-source agent skill (GitHub)</span></p>
+<p>Nico Bailon's <a href="https://github.com/nicobailon/skill-diet">skill-diet</a> trims what the model already knows, moves rarely needed detail into files it reads only when needed, and fixes commands that no longer match the tool. Then it runs the same tasks with the old skill, the new skill, and no skill, and keeps the new one only if it does at least as well. He reports 70–80% fewer tokens with the same results. The README ranks command formats by token cost: usage lines 1×, markdown table 1.5×, JSON Schema 2.8×, OpenAPI 4.7×.</p>
+<p class="why"><strong>Why it matters:</strong> That format table applies right away to how your agent describes its own tools. The "keep it only if it wins" gate is an A/B test with a rollback rule.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/poteto/status/2115880102601101414">/statechart: draw your state machines, find real bugs</a></h3>
+<p class="meta"><span class="who">lauren (@poteto)</span><span class="sep" aria-hidden="true">·</span><span class="type">agent skill release (pstack)</span></p>
+<p>lauren (@poteto) says the <code>/statechart</code> skill in pstack v0.15.36 is stable. It pairs with <code>/create-formal-verification-skill</code> to model state machines and distributed systems and find bugs. She says it includes "a mini tlc compiler" that parses, lowers to a small IR, and outputs Mermaid. Charts render with <a href="https://pele.run/">Pele</a>, a zero-dependency Mermaid-to-SVG renderer built for Obsidian that claims to be up to 500× faster than Mermaid.js. Her chart shows two real bugs it found.</p>
+<p class="why"><strong>Why it matters:</strong> This is the cheap formal methods Minsky is betting on, packaged as a skill. Try pointing it at your agent's own session state machine.</p>
+</article></div></section>
+<section class="section" aria-labelledby="careers-hiring-and-writing"><h2 class="section-label" id="careers-hiring-and-writing">Careers, hiring, and writing</h2>
+<div class="grid"><article class="story"><h3><a href="https://x.com/felixrieseberg/status/2115200995546566910">Hunger beats tenure: the coding interview is dead on my team</a></h3>
+<p class="meta"><span class="who">Felix Rieseberg (@felixrieseberg)</span><span class="sep" aria-hidden="true">·</span><span class="type">blog post</span></p>
+<p>Felix Rieseberg, a hiring manager at Anthropic, <a href="https://felixrieseberg.com/hunger-beats-tenure-advice-for-junior-engineers/">writes</a> that he dropped the coding interview from his loops this month because "Claude is now better at both" the React challenge and the assembly quiz. His advice for engineers "without social capital": aim at business impact, not the backlog. Pick one radical idea, build it over a weekend, and keep the prototype to that one idea. His example is the graphical Claude Code app, prototyped by two newer engineers over a weekend and shipped about eight days later.</p>
+<p class="why"><strong>Why it matters:</strong> You sit on interview loops, so "what replaces the coding round?" is your question too. The weekend-prototype playbook also works for pitching an agent product inside a big company.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/oanaolt/status/2115653332144648280">How friends prepped for Anthropic and OpenAI offers</a></h3>
+<p class="meta"><span class="who">Oana Olteanu (@oanaolt)</span><span class="sep" aria-hidden="true">·</span><span class="type">post (resource list)</span></p>
+<p>Oana Olteanu lists what her friends used: <a href="https://www.hellointerview.com">Hello Interview</a>, <a href="https://prachub.com">PracHub</a>, <a href="https://darkinterview.com">DarkInterview</a>, and <a href="https://www.1point3acres.com/en">1Point3Acres</a>. Of the last one she says people share leaked questions there, or pay for them. She also says Anthropic prices equity at the valuation on the offer date, while OpenAI uses the valuation on your start date.</p>
+<p class="why"><strong>Why it matters:</strong> If you're ever in the market, the valuation-date detail is the useful part, and it's worth confirming with the recruiter. Treat the leaked-question sites with care.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/GergelyOrosz/status/2116271344157618360">"Becoming a Better Writer" is now free</a></h3>
+<p class="meta"><span class="who">Gergely Orosz (@GergelyOrosz)</span><span class="sep" aria-hidden="true">·</span><span class="type">newsletter article</span></p>
+<p>Gergely Orosz unlocked his 2022 <a href="https://newsletter.pragmaticengineer.com/p/becoming-a-better-writer">Pragmatic Engineer piece</a> because he sees "too many devs writing low quality slop with AI." It covers editing (simplify the language, value "the reader's time more than your own"), getting feedback, and habits like a weekly "5-15" update. It cites Amazon's six-page limit as a forcing function.</p>
+<p class="why"><strong>Why it matters:</strong> You already work in six-pager country. And if you ever start writing up what you learn building your agent, this is the checklist.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/trajektoriePL/status/2114647146813125020">What to do with 1–5 years before AGI</a></h3>
+<p class="meta"><span class="who">Michał Podlewski (@trajektoriePL)</span><span class="sep" aria-hidden="true">·</span><span class="type">video clip (talk)</span></p>
+<p>Michał Podlewski posts a 6.7-minute clip of Jascha Sohl-Dickstein (@jaschasd, Anthropic) speaking at Stanford, framed as: "You might have 1–5 years to contribute intellectually to the world before AGI. What should you do with them?" I couldn't watch the video for this issue, so there's no summary of what he actually says.</p>
+<p class="why"><strong>Why it matters:</strong> It's a short watch for a Sunday. Pair it with Felix's post if you're thinking about where to spend your next few years.</p>
+</article></div></section>
+<section class="section" aria-labelledby="hardware-homelab-and-one-long-read"><h2 class="section-label" id="hardware-homelab-and-one-long-read">Hardware, homelab, and one long read</h2>
+<div class="grid"><article class="story"><h3><a href="https://x.com/Tristan0x/status/2114311011561812476">Your smart TV is cheap because you're the product</a></h3>
+<p class="meta"><span class="who">Tristan (@Tristan0x)</span><span class="sep" aria-hidden="true">·</span><span class="type">thread (privacy guide)</span></p>
+<p>Tristan builds on @log4j, who rooted a 2025 Samsung TV and <a href="https://x.com/log4j/status/2113762242327892456">found</a> that a TV without a mic will use one on a connected soundbar or Bluetooth device. Automatic content recognition (ACR) fingerprints the screen, every 500 ms on Samsung and every 10 ms on LG, according to an <a href="https://arxiv.org/abs/2409.06203">arXiv study</a>, and that includes HDMI inputs. His fix: turn ACR off (Samsung "Viewing Information Services," LG "Live Plus," Vizio "Viewing Data"), put smart devices on a guest/IoT network, run NextDNS (or Pi-hole) with the OISD blocklist, and block outbound port 53. Per Vizio's Q3 2024 results, it lost $6.7M on TVs and made $115.8M gross profit from ads and viewing data.</p>
+<p class="why"><strong>Why it matters:</strong> You already run Tailscale and Caddy, so Pi-hole plus an IoT VLAN is a Saturday afternoon. Do it before the Denon upgrade puts another box with a network port on the shelf.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/bflycomputer/status/2115147446385049758">Pond, a Linux operating system, early preview</a></h3>
+<p class="meta"><span class="who">Butterfly (@bflycomputer)</span><span class="sep" aria-hidden="true">·</span><span class="type">OS release</span></p>
+<p>Butterfly says Pond, its Linux OS, is now open to anyone, with installers and a detailed tour on <a href="https://butterfly.so/pond">its site</a>. The page loaded for me but its text came through as little more than section headings (Design, Engineering, Screenshots, Install, "Early Preview"). I didn't watch the 35-second video, so features aren't summarized here.</p>
+<p class="why"><strong>Why it matters:</strong> A new opinionated desktop is worth a spare-laptop install for anyone who fixes old Macs for fun. Keep your expectations at "early preview."</p>
+</article>
+<article class="story"><h3><a href="https://x.com/thorstenball/status/2115346307170607261">Computer chips are the most magnificent things we've ever made</a></h3>
+<p class="meta"><span class="who">Thorsten Ball (@thorstenball)</span><span class="sep" aria-hidden="true">·</span><span class="type">magazine feature (The New Yorker)</span></p>
+<p>Thorsten recommends Gideon Lewis-Kraus's <a href="https://www.newyorker.com/magazine/2026/10/26/computer-chips-are-the-most-magnificent-things-weve-ever-made">New Yorker feature</a> on TSMC and ASML. If you blew a Zeiss EUV mirror up to the size of the planet, "the highest mountain would have the elevation of a face-down playing card." Inside the machine, tin droplets are hit by lasers sixty thousand times a second, making plasma fifty times hotter than the surface of the sun. A machine ships in a fleet of seven 747s, ASML makes about fifty a year, and each costs up to four hundred million dollars. A wafer is "the diameter of a vinyl record."</p>
+<p class="why"><strong>Why it matters:</strong> It's the best long read of the week for a vintage computing person. The Connecticut ASML shop "hires the sorts of people who fix their own motorcycles," and that describes your bench too.</p>
+</article></div></section>
+<section class="section" aria-labelledby="money-desk"><h2 class="section-label" id="money-desk">Money desk</h2>
+<div class="grid"><article class="story"><h3><a href="https://x.com/ankurnagpal/status/2114780555552104475">Tax breaks for business owners, ranked by savings</a></h3>
+<p class="meta"><span class="who">Ankur Nagpal (@ankurnagpal)</span><span class="sep" aria-hidden="true">·</span><span class="type">thread</span></p>
+<p>Ankur Nagpal lists 11 breaks that the One Big Beautiful Bill Act made permanent or expanded: a cash balance plan ($100K–$300K+ a year deductible), a Solo 401k (up to $72K), the 20% QBI deduction, 100% bonus depreciation, PTET as a SALT-cap workaround, R&amp;D expensing, the S-Corp election, hiring your kids, the Augusta Rule, a home office ("W-2 employees who work from home get nothing"), and QSBS ($15M of tax-free gains after 5 years on C-Corp stock issued after July 4, 2025). It ends with a link to his free 251-page guide, and he says to have a CPA run the numbers.</p>
+<p class="why"><strong>Why it matters:</strong> Mostly useful once your agent side project becomes a company, and QSBS is the one to know before you incorporate. As a W-2 employee today, most of the list doesn't apply to you.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/shdu11546816/status/2114882910096408939">How I won an industry on Meta ads</a></h3>
+<p class="meta"><span class="who">shdu (@shdu11546816)</span><span class="sep" aria-hidden="true">·</span><span class="type">thread (anonymous founder)</span></p>
+<p>An anonymous founder who says he just sold his business explains his method. He tracked about 95 data points per lead (quote views, accessory adds, financing approvals, call and SMS transcripts with intent analysis), built a purchase-likelihood score, and made that score Meta's conversion target. He enriched leads through data broker APIs (income, credit score, home value) and put unlikely buyers on an exclusion list. He says he used Zapier and fingerprint.com, and let "metas AI just hill climb on a good reward function." None of this can be verified.</p>
+<p class="why"><strong>Why it matters:</strong> The reward-function idea carries over to agent evals. The data-broker part is the smart TV post seen from the advertiser's side.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/wespreadjam/status/2115568290307469548">Granola's AI-search (AEO) playbook</a></h3>
+<p class="meta"><span class="who">jam (@wespreadjam)</span><span class="sep" aria-hidden="true">·</span><span class="type">thread (growth marketing)</span></p>
+<p>jam claims Granola grew monthly new users from AI search by 4,600% in seven months, and gives no source for that number. The workflow: start from buyer decisions, not keywords. Find out why each lost prompt was lost. Tell a missing page apart from a weak one. Study which Reddit threads and review sites the models already trust. Sort sources into OWN, CLAIM, EARN, and CONTEST. Measure Google and AI search separately.</p>
+<p class="why"><strong>Why it matters:</strong> When your agent ships, "what does ChatGPT recommend when someone asks for a coding agent?" will be a real channel. This is a tidy way to track it.</p>
+</article></div></section>
+<section class="section" aria-labelledby="odds-and-ends"><h2 class="section-label" id="odds-and-ends">Odds and ends</h2>
+<div class="grid"><article class="story"><h3><a href="https://x.com/hosun_chung/status/2114688499567968282">Decide your if-thens on a good day</a></h3>
+<p class="meta"><span class="who">Hosun Chung (@hosun_chung)</span><span class="sep" aria-hidden="true">·</span><span class="type">quote-post</span></p>
+<p>Hosun Chung: negative thoughts → long walk, uninspired → read about someone great, low energy → gym, disconnected → message a friend. "decide your if-thens on a good day, so a bad day doesn't have to."</p>
+<p class="why"><strong>Why it matters:</strong> It's a runbook for bad days, written ahead of time like any good runbook.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/SahilBloom/status/2115429446148870195">Be careful what you normalize</a></h3>
+<p class="meta"><span class="who">Sahil Bloom (@SahilBloom)</span><span class="sep" aria-hidden="true">·</span><span class="type">post</span></p>
+<p>Sahil Bloom: complaining about your spouse, living on your phone, hating Mondays, and spending money you don't have are all common. "The worst habits always come with plenty of company."</p>
+<p class="why"><strong>Why it matters:</strong> Short and true. Applies to flaky tests, too.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/SahilBloom/status/2115788753797058850">Stress comes from what you avoid</a></h3>
+<p class="meta"><span class="who">Sahil Bloom (@SahilBloom)</span><span class="sep" aria-hidden="true">·</span><span class="type">post</span></p>
+<p>Sahil Bloom again: "most stress isn't from the hard things you're doing, but from the hard things you're avoiding." "The small repair gets more expensive."</p>
+<p class="why"><strong>Why it matters:</strong> Anyone who has opened an old Mac with a leaking clock battery already knows.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/byistra/status/2115431980481585248">C.S. Lewis: favorable conditions never come</a></h3>
+<p class="meta"><span class="who">Istra of Glome (@byistra)</span><span class="sep" aria-hidden="true">·</span><span class="type">image quote</span></p>
+<p>The image's alt text quotes Lewis: "If we let ourselves, we shall always be waiting for some distraction or other to end before we can really get down to our work... Favorable conditions never come."</p>
+<p class="why"><strong>Why it matters:</strong> Good to remember when the side project keeps waiting on a quieter week at work.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/AerialZer0/status/2115847388707332483">FINALS WEEK is out on Steam</a></h3>
+<p class="meta"><span class="who">Aerial (@AerialZer0)</span><span class="sep" aria-hidden="true">·</span><span class="type">video game launch</span></p>
+<p>Aerial's co-op "cheating sim" for 1–4 players: survive exams, steal and share answers with gadgets, write answers on walls and on your friends, avoid the teacher, and play basketball between exams. 38% launch discount.</p>
+<p class="why"><strong>Why it matters:</strong> A game night pick for the ping pong crew when it's raining in Seattle, which is most nights.</p>
+</article></div></section>
+<section class="pick" aria-labelledby="pick"><h2 class="section-label" id="pick">Pick of the week</h2>
+<p><strong><a href="https://x.com/poteto/status/2114626630429913383">Yaron Minsky on making your codebase better for agents</a>.</strong> Every other post this week argues about what to remove (PRs, branches, interviews). Minsky's <a href="https://www.youtube.com/watch?v=rUYP4C29yCw">talk</a> is about what to add: types, expect tests, and deterministic simulation as feedback loops an agent can't argue with, plus a sober take on why formal methods might finally be worth it. Watch it, then ask what your agent can check in milliseconds that it currently guesses at.</p>
+</section>
+</main>
+<footer class="foot"><div class="wrap"><em>Bookmark Digest · built from all 27 bookmarks saved Oct 25–30 · <a href="../">All issues</a> · <a href="2026-10-24.html">Previous issue: Oct 24, 2026</a> · see you Saturday.</em></div></footer>
+</body></html>

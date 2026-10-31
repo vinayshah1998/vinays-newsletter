@@ -16,6 +16,13 @@
       "coverage": "Oct 17–23",
       "dek": "Fifty-seven bookmarks: agent harnesses learn to survive crashes and sleep for free, agents get computers and a way to talk to each other, and PHP has a very bad Wednesday.",
       "bookmarks": 57
+    },
+    {
+      "date": "2026-10-31",
+      "title": "Bookmark Digest, Oct 31, 2026: No PRs, No Branches, No Coding Interview",
+      "coverage": "Oct 25–30",
+      "dek": "Twenty-seven bookmarks: the pull request, the long-lived branch and the coding interview all get pink slips, agents get a Git forge and a Rust runtime on Lambda, and your smart TV gets a firewall.",
+      "bookmarks": 27
     }
   ]
 }
