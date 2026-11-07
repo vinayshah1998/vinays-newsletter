@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Thirty-six bookmarks: agents get their own desktop and their own Mac, CI drops to two minutes, Claude learns to dream between sessions, and someone asks whether the ace of spades beats red.">
+<title>Bookmark Digest, Nov 7, 2026: Dreaming Between Sessions</title>
+<style>
+:root{--paper:#FFF1E5;--card:#F2DFCE;--rule:#CCC1B7;--ink:#33302E;--muted:#66605C;--claret:#990F3D;--oxford:#0F5499;--teal:#0D7680;
+--serif:Georgia,'Times New Roman',Times,serif;--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:18px/1.6 var(--serif);text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--ink);color:#fff;padding:8px 12px;font:600 14px var(--sans);z-index:10}
+.skip:focus{left:8px}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:3px solid var(--oxford);outline-offset:2px;border-radius:2px}
+.topbar{border-bottom:1px solid var(--rule)}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:48px;font:600 13px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase}
+.brand{font:700 20px/1 var(--serif);letter-spacing:0;text-transform:none}
+.edition{color:var(--muted)}
+.masthead{border-bottom:1px solid var(--rule);padding:48px 0 36px}
+.eyebrow{margin:0 0 14px;font:600 14px/1 var(--sans);color:var(--claret);letter-spacing:.02em}
+h1{margin:0 0 18px;font:400 clamp(36px,6vw,64px)/1.05 var(--serif);letter-spacing:-.015em;max-width:18ch}
+.standfirst{margin:0 0 20px;font:400 clamp(19px,2.2vw,23px)/1.45 var(--serif);color:var(--ink);max-width:62ch}
+.dateline{margin:0;font:14px/1.4 var(--sans);color:var(--muted);padding-top:14px;border-top:1px solid var(--rule);display:inline-block}
+.dateline em{font-style:normal}
+main{padding:12px 32px 64px}
+.section{margin-top:44px}
+.section-label{margin:0 0 24px;padding-top:12px;border-top:4px solid var(--ink);font:700 15px/1.2 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.grid{display:grid;grid-template-columns:1fr;gap:0 48px}
+.story{padding:0 0 28px;margin:0 0 28px;border-bottom:1px solid var(--rule);max-width:70ch}
+.story h3{margin:0 0 8px;font:400 24px/1.25 var(--serif);letter-spacing:-.005em}
+.story h3 a{background-image:linear-gradient(currentColor,currentColor);background-size:0 1px;background-repeat:no-repeat;background-position:0 100%;transition:color .15s,background-size .2s}
+.story h3 a:hover,.story h3 a:focus-visible{color:var(--claret);background-size:100% 1px}
+.meta{margin:0 0 12px;font:14px/1.4 var(--sans);color:var(--muted);display:flex;flex-wrap:wrap;gap:6px}
+.who{font-weight:600;color:var(--ink)}
+.story p{margin:0 0 14px}
+.story p a,.pick p a{color:var(--oxford);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.story p a:hover,.pick p a:hover{color:var(--claret)}
+.why{margin:16px 0 0!important;padding:10px 0 10px 16px;border-left:3px solid var(--teal);font:16px/1.55 var(--sans);background:linear-gradient(90deg,rgba(13,118,128,.07),rgba(13,118,128,0) 85%)}
+.why strong{color:var(--teal);font-weight:700}
+code{font:.84em var(--mono);background:var(--card);padding:1px 5px;border-radius:2px}
+.lead{max-width:none;display:grid;grid-template-columns:1fr;gap:0 48px;padding-bottom:36px;margin-bottom:36px}
+.lead h3{font-size:clamp(28px,3.6vw,40px);line-height:1.12;letter-spacing:-.01em}
+.lead > p:not(.meta):not(.why){font-size:19px;max-width:66ch}
+.pick{margin:56px 0 0;background:var(--card);border-top:4px solid var(--claret);padding:28px 32px 30px}
+.pick .section-label{border-top:0;padding-top:0;color:var(--claret);margin-bottom:14px}
+.pick p{margin:0;font:400 clamp(19px,2vw,22px)/1.5 var(--serif);max-width:68ch}
+.pick p strong a{font-weight:700}
+.foot{border-top:1px solid var(--rule);padding:24px 0 40px;font:14px/1.5 var(--sans);color:var(--muted)}
+.foot em{font-style:normal}
+@media (min-width:900px){
+ .grid{grid-template-columns:1fr 1fr}
+ .grid .story{max-width:none}
+ .lead{grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-template-areas:"h h" "m m" "b w"}
+ .lead h3{grid-area:h;max-width:28ch}.lead .meta{grid-area:m}.lead > p:nth-of-type(2){grid-area:b}.lead .why{grid-area:w;align-self:start;margin-top:0!important}
+}
+@media (max-width:600px){
+ body{font-size:17px}
+ .wrap,main{padding-left:18px;padding-right:18px}
+ .masthead{padding:32px 0 28px}
+ .story h3{font-size:21px}
+ .pick{padding:22px 20px;margin-left:-18px;margin-right:-18px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+</style></head><body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="topbar"><div class="wrap"><span class="brand">Bookmark Digest</span><span class="edition">Nov 7, 2026</span></div></div>
+<header class="masthead"><div class="wrap">
+<p class="eyebrow">Bookmark Digest · Nov 7, 2026</p>
+<h1>Dreaming Between Sessions</h1>
+<p class="standfirst">Thirty-six bookmarks this week, and the through-line is the stuff that used to sit outside the agent loop: the computer itself, the CI queue, the memory that used to evaporate when a session ended. Chris Tate ships agent-desktop so any coding agent can drive your whole machine in the background; Kirtan puts an entire macOS inside the terminal so the agent can keep a Mac of its own; Anthropic publishes the engineering notes on "dreaming," the offline pass that reorganizes what Claude wrote down while it was busy.<br>Also inside: Owen's Boardy CI going from 40 minutes to 2, Karpathy filtering 43 million HN comments into HackerTube over a weekend, Guillermo streaming generative UI into Slack and Teams, and a card-guessing problem that will ruin someone's Saturday.</p>
+<p class="dateline"><em>Oct 30–Nov 6, 2026 (PT) · 36 bookmarks, every one of them</em></p>
+</div></header>
+<main id="main" class="wrap">
+<section class="section" aria-labelledby="computer-use-comes-home"><h2 class="section-label" id="computer-use-comes-home">Computer use comes home</h2>
+<article class="story lead"><h3><a href="https://x.com/ctatedev/status/2116323148706771302">agent-desktop: computer use for any coding agent</a></h3>
+<p class="meta"><span class="who">Chris Tate (@ctatedev)</span><span class="sep" aria-hidden="true">·</span><span class="type">product launch (video)</span></p>
+<p>Chris Tate introduces <a href="https://x.com/ctatedev/status/2116323148706771302">agent-desktop</a>: "agent-browser, for your whole computer." Computer use for any coding agent, on macOS, Windows, and Linux. It runs in the background while you keep working, and agents can use the computer in parallel, each with its own cursor.</p>
+<p class="why"><strong>Why it matters:</strong> This is the missing layer between a coding agent that edits files and one that can actually operate the machine your product lives on. Worth watching for how Cursor/Claude/Amp-style agents will want to ship demos without a human babysitting the mouse.</p>
+</article>
+<div class="grid"><article class="story"><h3><a href="https://x.com/kirtandopamine/status/2117678349828976746">terminal-mac: an entire macOS inside your terminal</a></h3>
+<p class="meta"><span class="who">Kirtan (@kirtandopamine)</span><span class="sep" aria-hidden="true">·</span><span class="type">open-source launch (video)</span></p>
+<p>Kirtan ships terminal-mac: "Entire MacOS that runs inside your existing terminal." Pitch: give your agent its own Mac and keep yours; watch it work live next to your terminal; computer use built in via MCP, CLI, and skill. Free and open source.</p>
+<p class="why"><strong>Why it matters:</strong> Same idea as agent-desktop, different packaging: isolate the agent's machine so it can thrash a VM while you keep your host. Useful pattern for a coding-agent product that needs sandboxed computer use.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/DeepSeekHarness/status/2116857257245987236">Exploring Super-agent Design</a></h3>
+<p class="meta"><span class="who">DeepSeek Harness (@DeepSeekHarness)</span><span class="sep" aria-hidden="true">·</span><span class="type">X Article (architecture essay)</span></p>
+<p>DeepSeek Harness posts a long architecture essay (machine-translated from Chinese) arguing that single-session ReAct agents can't support always-online, multi-task work. They call the alternative a "Super-agent" with four traits: Continuous (one identity across IM and GitHub), Productive (parallel tasks, take the next instruction before the last finishes), Proactive (monitor events, act without being @-mentioned), and Persistent (always online, recover from anomalies). Their internal instance continues a development task across IM and GitHub and opens PRs from public group-chat feedback without being pinged. They note a person can usually follow only 3–5 active sessions, so multi-tasking is bottlenecked by human attention, not the model.</p>
+<p class="why"><strong>Why it matters:</strong> This is the product brief for what you're building, written as an architecture note: session isolation is the bug, not a feature. The four traits are a useful checklist against your own harness.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/DeepSeekHarness/status/2117256196227019194">Creator Mode: your harness, you define it</a></h3>
+<p class="meta"><span class="who">DeepSeek Harness (@DeepSeekHarness)</span><span class="sep" aria-hidden="true">·</span><span class="type">product feature (video)</span></p>
+<p>Follow-up from DeepSeek Harness: Creator Mode lets you turn ideas into plugins you can use, "from a design workspace to a sandbox game or a 3D LLM visualizer." Tagline: "Your Harness. You Define It."</p>
+<p class="why"><strong>Why it matters:</strong> Extensibility as a first-class surface. If your coding agent is a platform, this is the shape of the plugin story.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/dom_scholz/status/2117307304395636772">Open Bot Avatar goes OSS</a></h3>
+<p class="meta"><span class="who">Dominik Scholz (@dom_scholz)</span><span class="sep" aria-hidden="true">·</span><span class="type">open-source release (video)</span></p>
+<p>Dominik Scholz open-sources the animated bot avatars people kept asking about: Open Bot Avatar, "a JSON spec and renderer for interactive agent avatars," MIT licensed.</p>
+<p class="why"><strong>Why it matters:</strong> Small, but agents need faces if they're going to live in Slack and Grok Bot teams. A JSON spec beats a one-off Figma export.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/poteto/status/2116576229319233596">lauren's short Grok Bot team guide</a></h3>
+<p class="meta"><span class="who">lauren (@poteto)</span><span class="sep" aria-hidden="true">·</span><span class="type">field notes</span></p>
+<p>lauren (@poteto) posts a short guide on running a high-quality Grok Bot team: add Dr Eggbot as a bot designer; prefer a few good bots over a large team; have bots create skills for themselves as you teach them tasks (and optionally a private GitHub repo to store them); wire connectors and the vault so the bot stops needing copy-paste; onboard a bot the way you'd onboard an intern; and use voice mode, then ask the bot to "restate this in your own words" so you can confirm it understood.</p>
+<p class="why"><strong>Why it matters:</strong> You already run a bot fleet. The "create skills for itself" loop and the restate-back check are cheap defaults to bake into every bot you ship.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/poteto/status/2118613050462728659">You don't need a software factory</a></h3>
+<p class="meta"><span class="who">lauren (@poteto)</span><span class="sep" aria-hidden="true">·</span><span class="type">quote-post (opinion)</span></p>
+<p>lauren quote-posts dax (@thdxr): "all the companies selling you a software factory produce a shockingly tiny amount of software." Her hot take: you don't need a software factory, and she doesn't love the term. "All you need is good software engineering and investing your tokens in the right places. The more deterministic the better (and token efficient)."</p>
+<p class="why"><strong>Why it matters:</strong> A useful counterweight to the "agent factory" pitch. Determinism and token efficiency are the boring virtues that survive the marketing cycle.</p>
+</article></div></section>
+<section class="section" aria-labelledby="memory-ui-and-the-agent-surface"><h2 class="section-label" id="memory-ui-and-the-agent-surface">Memory, UI, and the agent surface</h2>
+<div class="grid"><article class="story"><h3><a href="https://x.com/AnthropicAI/status/2118814753154064501">The components of agent memory (and dreaming)</a></h3>
+<p class="meta"><span class="who">Anthropic (@AnthropicAI)</span><span class="sep" aria-hidden="true">·</span><span class="type">engineering blog post</span></p>
+<p>Anthropic's Engineering blog, <a href="https://www.anthropic.com/research/components-of-agent-memory">The components of agent memory</a> (Nov 6). They treat agent memory as knowledge gained from experience and kept between sessions as readable notes—not weight updates, not in-context learning, not compaction. The key idea is "dreaming": offline compute between sessions that replays logs, corrects bad notes, builds wiki-style representations, and promotes a small header into the next session's injected context (Claude Code's auto memory loads only the first 200 lines / 25 KB of MEMORY.md). On Continual Learning Bench, stronger Claudes closed the loop themselves—writing rules plus how they knew the rules were true. On Pokémon, Sonnet 3.7 wrote 413 memory files and earned one badge; Fable 5 wrote nine files plus a global.md and earned four. Dreaming fixed a wrong Mt. Moon landmark note against the transcript and got Claude through the cave. On a ~350k-file Stainless corpus, scaling dreaming from 2 to 128 sessions raised a 25-question eval from 13% to 48% of graded criteria; wiki plus search beat search alone and saved ~20k tokens per question.</p>
+<p class="why"><strong>Why it matters:</strong> This is the memory design doc your coding agent will be measured against. Dreaming as a background job—correct, consolidate, inject a tiny header—is a concrete architecture, not a vibe.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/rauchg/status/2118856239719608353">Generative UI for conversational agents</a></h3>
+<p class="meta"><span class="who">Guillermo Rauch (@rauchg)</span><span class="sep" aria-hidden="true">·</span><span class="type">Vercel changelog + video</span></p>
+<p>Guillermo Rauch announces that Chat SDK agents can stream generative UI with <a href="https://vercel.com/changelog/json-render-and-chat-sdk-agents">json-render</a>. Combine the AI SDK, Chat SDK, and json-render: the agent writes a typed JSON spec, adapters render native cards (Block Kit on Slack, Adaptive Cards on Teams). <code>streamCard</code> posts once the root has content and updates at most every 500 ms; <code>toCard</code> validates props and throws readable <code>CardSpecError</code>s the model can fix. He calls this the coming dominant Human-Agent Interaction paradigm.</p>
+<p class="why"><strong>Why it matters:</strong> If your agent lives in Slack (and yours does), streaming typed cards instead of walls of markdown is the interaction model to copy. The catalog-as-system-prompt pattern is also clean.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/rikiyatakehi/status/2117313742891327994">Weight-Space Programming: edit weights without training</a></h3>
+<p class="meta"><span class="who">Rikiya Takehi (@rikiyatakehi)</span><span class="sep" aria-hidden="true">·</span><span class="type">research thread + blog</span></p>
+<p>Rikiya Takehi reports asking GPT-6 Astra to edit Qwen3.5-0.8B weights to improve math. It changed only 0.016% of weights, fixed reasoning loops, improved math up to 6× and instruction following 3×, without gradients or training. They call it Weight-Space Programming: frontier LLMs natively reading and writing neural network weights.</p>
+<p class="why"><strong>Why it matters:</strong> Even if you never ship this, "frontier model as weight editor" is a new primitive sitting next to fine-tuning. File it under things that rearrange the product roadmap.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/thdxr/status/2118067183406518551">Hex: local voice dictation</a></h3>
+<p class="meta"><span class="who">dax (@thdxr)</span><span class="sep" aria-hidden="true">·</span><span class="type">product link</span></p>
+<p>dax links <a href="https://anoma.ly/hex">Hex</a>: local voice dictation for Mac, Windows, and Linux. Hold Option, say what you mean, and Hex pastes it where you are. Install via Homebrew cask, PowerShell, or a Linux script. In a related post he notes Hex hit 25,000 daily active users in five days.</p>
+<p class="why"><strong>Why it matters:</strong> lauren's Grok Bot tip was "use voice mode." Hex is the system-wide version—local, cross-platform, and suddenly very popular. Relevant if your agent onboarding starts with a brain dump.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/addyosmani/status/2117512471930167377">Critical thinking when agents do the work</a></h3>
+<p class="meta"><span class="who">Addy Osmani (@addyosmani)</span><span class="sep" aria-hidden="true">·</span><span class="type">X Article</span></p>
+<p>Addy Osmani's article maps a spectrum: cognitive offloading (delegate but keep ownership) → deferral (the tool's output becomes your input) → cognitive surrender (the AI's output quietly becomes yours). He borrows "cognitive surrender" from Shaw and Nave at Wharton, and ties it to Storey's eroding shared system theory and his own "comprehension debt." Practices: once a week write code without an agent; once a month write down what you've stopped doing; have a hypothesis before you ask; read what it ran before the summary; if you wouldn't put your name on it, it doesn't ship. "You may offload the work and much of the auditing, but not the accountability."</p>
+<p class="why"><strong>Why it matters:</strong> The honest companion piece to every "agents write all the PRs" post. Bake "hypothesis before ask" and "read the evidence, not the summary" into your agent's review UX.</p>
+</article></div></section>
+<section class="section" aria-labelledby="make-the-loop-fast"><h2 class="section-label" id="make-the-loop-fast">Make the loop fast</h2>
+<div class="grid"><article class="story"><h3><a href="https://x.com/owengretzinger/status/2116331367407694118">How I made our CI 20× faster (steal this)</a></h3>
+<p class="meta"><span class="who">owen (@owengretzinger)</span><span class="sep" aria-hidden="true">·</span><span class="type">X Article (quoted) + reaction video</span></p>
+<p>owen quote-posts his own article: at Boardy, PR CI went from up to 40 minutes to 2. "Every PR we ship is written with coding agents, and agents don't get tired of pushing… When writing code gets 10× faster and CI doesn't, CI is what you're waiting on." He treated CI like a product, mostly from an internal Slack agent on his phone. The checklist: leave GitHub's default runners (Blacksmith cut wait from 11 min to 8 sec); replace ESLint with Oxlint (2 min → 5 sec); chase faster typecheckers (tsc 70s → TS 7 at 13s → bun check under 5s; locally tsrs at 0.6s); shard tests onto bigger machines; set Vitest <code>isolate: false</code> (100s → 35s per shard, with a reset hook); fix setup and cache seeding from main (a year-old bug where half of PR runs missed cache); run lint/typecheck/build/tests in parallel; use nx affected; put format/lint/typecheck in a pre-push hook ("agents skip steps" in AGENTS.md). CI bill: $230/mo → $4,300/mo, "the cheapest money we spend on making agents faster." Next bottleneck: him clicking merge.</p>
+<p class="why"><strong>Why it matters:</strong> This is the agent-loop bottleneck written as a runbook. Hand the article to your agent and point it at your own CI. The pre-push-hook-not-AGENTS.md line is the one to steal first.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/jarredsumner/status/2117037940031496252">What Jarred says to Claude during perf work</a></h3>
+<p class="meta"><span class="who">Jarred Sumner (@jarredsumner)</span><span class="sep" aria-hidden="true">·</span><span class="type">prompt list</span></p>
+<p>Jarred Sumner's prompts for perf work with Claude: rewrite to leverage data-oriented design; replace hash tables with flat arrays and pack common data into upper bits of indices; "caching is cope for a slow design—delete all existing caches and redesign"; prefer structure-of-arrays over array-of-structures.</p>
+<p class="why"><strong>Why it matters:</strong> Paste-ready prompts with a point of view. "Caching is cope" belongs in your agent's perf skill.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/_dylanga/status/2117400205314421058">More hot-path prompts from Dylan</a></h3>
+<p class="meta"><span class="who">Dylan Garcia (@_dylanga)</span><span class="sep" aria-hidden="true">·</span><span class="type">prompt list (quote-post)</span></p>
+<p>Dylan Garcia continues a thread of "bangers for healthy systems, fast software, and happy users": select only the fields you need instead of loading whole rows; remove unnecessary <code>new URL()</code> parsing; compute regexes at module level, not inside functions/loops; promote hot-path keys out of large jsonb columns into real columns. On that last one: "we had queries that had to detoast 20gb+ of data just to need a couple of kb."</p>
+<p class="why"><strong>Why it matters:</strong> Concrete, reviewable diffs. Pair with Jarred's list as a weekly "ask the agent to hunt these" chore.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/_dylanga/status/2117756672202436674">Observability prompts that actually stick</a></h3>
+<p class="meta"><span class="who">Dylan Garcia (@_dylanga)</span><span class="sep" aria-hidden="true">·</span><span class="type">prompt list</span></p>
+<p>Dylan on how you know you have healthy systems: observability. One prompt wires OpenTelemetry tracing across a Hono repo—trace at function definitions, lint-rule the behavior, attach request context to every span, propagate traceparents. Another: read Boris Tane's piece and implement it everywhere. "If you don't know what's happening in production, your p0 is doing that."</p>
+<p class="why"><strong>Why it matters:</strong> Agents are great at the mechanical part of instrumentation and terrible at deciding to start. Make this a default skill on any underobserved service.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/peer_rich/status/2116977827115589907">Sprinters: senior foundation engineers embedded in product teams</a></h3>
+<p class="meta"><span class="who">Peer Richelsen (@peer_rich)</span><span class="sep" aria-hidden="true">·</span><span class="type">quote-post</span></p>
+<p>Peer Richelsen quote-posts Keith Williams (@keithwillcode): "We embed senior foundation engineers directly into the product engineering teams. We call them sprinters… catching architecture and database problems before they become blockers. Easily the best structural change we've made this year." Peer's gloss: "db and architecture problems caught early, not at 2am."</p>
+<p class="why"><strong>Why it matters:</strong> An org pattern that pairs well with agents: humans who catch the structural bugs agents cheerfully paper over.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/kayleecodez/status/2118442156008571274">You can't bullshit 500k req/s: Google's NALSD</a></h3>
+<p class="meta"><span class="who">mitali (@kayleecodez)</span><span class="sep" aria-hidden="true">·</span><span class="type">link to Google SRE workbook</span></p>
+<p>mitali: "you can bullshit your way through a system design diagram but unfortunately you cannot bullshit your way through 500k req/s." Links Google's SRE workbook chapter on <a href="https://sre.google/workbook/non-abstract-design">Non-Abstract Large System Design</a>: iterate a design with real resource estimates (machines, IOPS, network), asking is it possible / can we do better / is it feasible / is it resilient. The AdWords CTR example walks one machine → MapReduce → LogJoiner → sharded → multidatacenter with Paxos, with the arithmetic shown.</p>
+<p class="why"><strong>Why it matters:</strong> NALSD is the antidote to agent-generated architecture diagrams that never meet a disk. Good homework for any system-design skill you give your agent.</p>
+</article></div></section>
+<section class="section" aria-labelledby="ui-craft-and-agent-made-demos"><h2 class="section-label" id="ui-craft-and-agent-made-demos">UI craft and agent-made demos</h2>
+<div class="grid"><article class="story"><h3><a href="https://x.com/steveruizok/status/2116552016218710389">"Find all of the implicit state machines in my app"</a></h3>
+<p class="meta"><span class="who">Steve Ruiz (@steveruizok)</span><span class="sep" aria-hidden="true">·</span><span class="type">one-line prompt</span></p>
+<p>Steve Ruiz (tldraw): "good prompt 'find all of the implicit state machines in my app'."</p>
+<p class="why"><strong>Why it matters:</strong> Last issue had lauren's /statechart skill. This is the one-liner that feeds it. Ask it Monday.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/benjitaylor/status/2116593247854453244">Stageshow: a skill for faux UI stills and demos</a></h3>
+<p class="meta"><span class="who">Benji Taylor (@benjitaylor)</span><span class="sep" aria-hidden="true">·</span><span class="type">agent skill release (video)</span></p>
+<p>Benji Taylor ships Stageshow: "a skill that helps your agent make better faux UI stills, animations, bento grids, and more." Install: <code>npx skills add benjitaylor/skills --skill stageshow</code>.</p>
+<p class="why"><strong>Why it matters:</strong> Demo videos are half the product now. A skill that scripts the cursor through real components beats another Loom of you clicking around.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/jalcowastaken/status/2116607912735130006">Keep a personal UI lab</a></h3>
+<p class="meta"><span class="who">justin (jalco) levine (@jalcowastaken)</span><span class="sep" aria-hidden="true">·</span><span class="type">advice + video</span></p>
+<p>justin Levine recommends anyone who works on interfaces keep a personal "lab" or scratch pad for components and interactions—a curated personal library you revisit. He builds on Benji's Stageshow work.</p>
+<p class="why"><strong>Why it matters:</strong> Same advice as a design system, but private and messy on purpose. Good place to point an agent when you say "make it feel like my stuff."</p>
+</article>
+<article class="story"><h3><a href="https://x.com/kevin_t_ngo/status/2116743334735851819">A hand-drawn UI library, demoed by Stageshow</a></h3>
+<p class="meta"><span class="who">Kevin Ngo (@kevin_t_ngo)</span><span class="sep" aria-hidden="true">·</span><span class="type">library demo (video)</span></p>
+<p>Kevin Ngo made a UI library that looks hand-drawn. Benji's Stageshow skill helped make the demo: it scripts a macOS cursor through real components, flags visual bugs, and records frame by frame.</p>
+<p class="why"><strong>Why it matters:</strong> Proof that Stageshow isn't just marketing stills—it can QA the pixels while it films them.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/robinebers/status/2116772282878362026">Robin cannot live without Paper</a></h3>
+<p class="meta"><span class="who">Robin Ebers (@robinebers)</span><span class="sep" aria-hidden="true">·</span><span class="type">endorsement (screenshot)</span></p>
+<p>Robin Ebers: "man, @paper truly is the shit / how did i ever live without this," with a screenshot of the Paper app in use.</p>
+<p class="why"><strong>Why it matters:</strong> Lightweight signal on a design/writing tool people in this feed keep quietly switching to.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/emilkowalski/status/2118687605776597482">Make your app feel faster</a></h3>
+<p class="meta"><span class="who">Emil Kowalski (@emilkowalski)</span><span class="sep" aria-hidden="true">·</span><span class="type">tips list (video)</span></p>
+<p>Emil Kowalski's list: use ease-out instead of ease-in for instant feedback; keep most UI animations under 300ms; use custom easing curves for snappier interactions; make your loading spinners spin faster.</p>
+<p class="why"><strong>Why it matters:</strong> Perceived performance is free product work. The spinner one is a joke that works.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/liu8in/status/2118051283227885833">HyperFrames refreshes /reverse-any-video</a></h3>
+<p class="meta"><span class="who">liu (@liu8in)</span><span class="sep" aria-hidden="true">·</span><span class="type">skill update (quote-post)</span></p>
+<p>liu quote-posts HyperFrames: their OSS skills got a line-by-line rewrite, and the new <code>/reverse-any-video</code> skill is the headline. Update with <code>npx hyperframes skills update</code>. The quoted post also unlocks generative models with Pro and free access to music, SFX, stock images, and TTS.</p>
+<p class="why"><strong>Why it matters:</strong> Video-reverse as an agent skill is a weirdly useful primitive for recreating motion you like. Bookmark for the next time a demo needs to match a reference.</p>
+</article></div></section>
+<section class="section" aria-labelledby="growth-hiring-and-building-the-company"><h2 class="section-label" id="growth-hiring-and-building-the-company">Growth, hiring, and building the company</h2>
+<div class="grid"><article class="story"><h3><a href="https://x.com/lennysan/status/2116927042759635132">Lenny × Hector Serrano on paid UGC at Wispr Flow</a></h3>
+<p class="meta"><span class="who">Lenny Rachitsky (@lennysan)</span><span class="sep" aria-hidden="true">·</span><span class="type">podcast episode</span></p>
+<p>Lenny interviews Hector Serrano (@hectorserrranoo), Head of Content at Wispr Flow: joined at 19 after quitting D1 soccer, made every ad himself for 1.5 years, then imported the e-com creator playbook into B2B SaaS. Creators make ads, get paid a cut of ad spend, top ones earn $100K+/year. Wispr Flow grew revenue 30×+ and raised at a $2B valuation. The episode walks the full playbook from recruiting to YouTube packaging.</p>
+<p class="why"><strong>Why it matters:</strong> When Foolish Enterprises needs distribution, this is the episode to steal from—not because you need Meta ads tomorrow, but because the creator-comp model is portable.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/lennysan/status/2117277733273366891">Lenny's ten takeaways from Hector</a></h3>
+<p class="meta"><span class="who">Lenny Rachitsky (@lennysan)</span><span class="sep" aria-hidden="true">·</span><span class="type">takeaways thread</span></p>
+<p>Lenny's written takeaways: paid UGC is high-alpha for B2B SaaS right now ("TikTok Shop method, but for Meta Ads"); turn paid on after PMF, not before; pay creators a % of spend or GMV with a smart retainer floor so new creators survive the learning curve; recruit first creators by hand off-platform (150–250 targeted DMs); push experimentation because Meta's Andromeda groups lookalike ads; niche creators beat "college kid UGC"; you need a creative lead and a media buyer; "the best marketers are allergic to AI" in the final output; develop young talent like a soccer academy.</p>
+<p class="why"><strong>Why it matters:</strong> The condensed version of the episode. Point 9—human endpoint on the last 10%—is the growth equivalent of Addy's accountability line.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/googlewaqas/status/2117613798370545971">Steal their GTM container</a></h3>
+<p class="meta"><span class="who">Waqas (@googlewaqas)</span><span class="sep" aria-hidden="true">·</span><span class="type">growth tip</span></p>
+<p>Waqas: open a competitor's homepage, view source, Ctrl+F "GTM-", copy their Google Tag Manager ID, then inspect the container. Event names give you their funnel; values give you what each step is worth. "Their tracking, their funnel and their numbers. From one file they can't hide." Nine years inside Google; tracking is the first thing on every audit.</p>
+<p class="why"><strong>Why it matters:</strong> Slightly feral, extremely practical. Useful the next time you're sizing a competitor's paid funnel.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/earendilworks/status/2118607154013737432">Earendil is hiring</a></h3>
+<p class="meta"><span class="who">Earendil (@earendilworks)</span><span class="sep" aria-hidden="true">·</span><span class="type">hiring post</span></p>
+<p>Earendil wants teammates who "operate with intensity, integrity, and have a yearning to craft software and open protocols that strengthen human agency." Roles on <a href="https://earendil.com/join/">earendil.com/join</a>: Member of the Technical Staff, Founder's Office, Go to Market.</p>
+<p class="why"><strong>Why it matters:</strong> Open protocols + human agency is adjacent to the agent-product thesis. File under companies to watch (or join, if the day job ever gets boring).</p>
+</article>
+<article class="story"><h3><a href="https://x.com/hayleyhalv/status/2118746515640320473">Stripe Atlas fee waived with Treasury</a></h3>
+<p class="meta"><span class="who">Hayley Halvarsson (@hayleyhalv)</span><span class="sep" aria-hidden="true">·</span><span class="type">product update</span></p>
+<p>Hayley Halvarsson: Atlas is now free when you use Stripe for banking. Open a Stripe Treasury account within 7 days of incorporating and Stripe deposits $500 to cover the Atlas fee.</p>
+<p class="why"><strong>Why it matters:</strong> Foolish Enterprises LLC just got its WA approval and UBI. Delaware/Atlas may or may not be the next step, but $0 Atlas is a data point if you ever need a C-corp sidecar.</p>
+</article></div></section>
+<section class="section" aria-labelledby="weekend-hacks-markets-and-life"><h2 class="section-label" id="weekend-hacks-markets-and-life">Weekend hacks, markets, and life</h2>
+<div class="grid"><article class="story"><h3><a href="https://x.com/karpathy/status/2116957135661945283">Karpathy's weekend hack: HackerTube</a></h3>
+<p class="meta"><span class="who">Andrej Karpathy (@karpathy)</span><span class="sep" aria-hidden="true">·</span><span class="type">weekend project</span></p>
+<p>Karpathy was annoyed with YouTube recommendations, so he had Claude filter 43 million comments over 20 years of HN down to 6,454 videos that keep getting recommended. Result: <a href="https://hackertube.org/">hackertube.org</a>, ~2 hours with Opus 5.5. No login (state in local browser session); thumbnails are a mid-video frame instead of A/B-optimized uploads; underlying data ships as a zip so you can point your own Claude at it. He only did three manual things (YouTube API key, VPS, domain); Claude secured, hardened, deployed, and optimized the rest. "Many awesome projects that would have normally taken weeks/months even can now be few-shotted for breakfast."</p>
+<p class="why"><strong>Why it matters:</strong> The canonical "what else are we not thinking of" post. Also a reminder that the interesting product might be the filtered corpus, not the model.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/huaxying/status/2118427336580419774">Hedge fund hotels and why being right stopped paying</a></h3>
+<p class="meta"><span class="who">Hua (@huaxying)</span><span class="sep" aria-hidden="true">·</span><span class="type">long market essay</span></p>
+<p>Hua's essay on how the fundamental HF game broke. Alt data used to be an edge; then everyone got the same datasets and the same read on the quarter. The players changed: ETFs, pods with identical risk constraints, long-onlys rotating out of value, retail. Names became "hedge fund hotels"—everyone knew the company, obsessed over the same line items, and when you were right there was nobody left to follow the trade. Now the AI trade has everyone checked into the same hotel. Pods move first on the unwind because leverage and tight drawdowns can't sit through a −2%. Closing question: can AI help spot the break, or does it just make everyone better at finding the same trade?</p>
+<p class="why"><strong>Why it matters:</strong> A clean explanation of crowded trades that maps uncomfortably well onto AI-assisted alpha in software too. Same tools, same reads, thinner edge.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/hubermanlab/status/2116570624282014037">Huberman stands by the language</a></h3>
+<p class="meta"><span class="who">Andrew D. Huberman, Ph.D. (@hubermanlab)</span><span class="sep" aria-hidden="true">·</span><span class="type">image post</span></p>
+<p>Andrew Huberman: "People may take issue with the language I use here but I stand by it," with an accompanying image.</p>
+<p class="why"><strong>Why it matters:</strong> Bookmarked, so it stays. Context lives in the image; the commitment to the phrasing is the post.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/adele_bloch/status/2118215482918514956">Extra tips on how to socialize</a></h3>
+<p class="meta"><span class="who">Adele Bloch (@adele_bloch)</span><span class="sep" aria-hidden="true">·</span><span class="type">advice list</span></p>
+<p>Adele Bloch's list: you get 5–12 hours of real social time a week—protect them; reach out within 48 hours of meeting someone cool; build rituals (monthly dinners, weekly walks); be the one who initiates; put the phone away; check in when you don't need anything; host even for four; invest in reciprocal friendships; follow up on details; be vulnerable. "Socializing requires effort and intentionality."</p>
+<p class="why"><strong>Why it matters:</strong> Seattle winter is coming. The 48-hour rule and "be the one who initiates" are the whole post.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/DearS_o_n/status/2118680823926759763">Be the one who reaches out</a></h3>
+<p class="meta"><span class="who">Dear Son. (@DearS_o_n)</span><span class="sep" aria-hidden="true">·</span><span class="type">aphorism</span></p>
+<p>"Major cheat code in life: Be the one who reaches out. Text first. Call first. Plan first. Initialize first. Most people wait to be chosen. Be the chooser."</p>
+<p class="why"><strong>Why it matters:</strong> The compressed version of Adele's list. Initialize first.</p>
+</article>
+<article class="story"><h3><a href="https://x.com/LongFormMath/status/2118811181637120148">Red, or the ace of spades?</a></h3>
+<p class="meta"><span class="who">Jay Cummings (@LongFormMath)</span><span class="sep" aria-hidden="true">·</span><span class="type">math puzzle</span></p>
+<p>Jay Cummings: a random card is drawn from a deck; you will try to guess it; first you may ask one yes/no question. Is it better to ask if the card is red, or if the card is the ace of spades?</p>
+<p class="why"><strong>Why it matters:</strong> Do not answer this in a meeting. The information-theory answer is the point, and it will start an argument.</p>
+</article></div></section>
+<section class="pick" aria-labelledby="pick"><h2 class="section-label" id="pick">Pick of the week</h2>
+<p><strong><a href="https://www.anthropic.com/research/components-of-agent-memory">Anthropic on agent memory and dreaming</a>.</strong> The clearest public write-up yet of how an agent should remember: write notes in-session, then dream offline—correct mistakes against the transcript, build a wiki, and inject only a tiny header into the next session. Sonnet 3.7's 413 Pokémon memory files versus Fable 5's nine-file dashboard is the cautionary tale; the Mt. Moon ledge is the demo. If you're building a coding agent, this is the memory chapter to steal from.</p>
+</section>
+</main>
+<footer class="foot"><div class="wrap"><em>Bookmark Digest · built from all 36 bookmarks saved Oct 30–Nov 6 · <a href="../">All issues</a> · <a href="2026-10-31.html">Previous issue: Oct 31, 2026</a> · see you Saturday.</em></div></footer>
+</body></html>
